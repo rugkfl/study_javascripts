@@ -1,50 +1,50 @@
-let name = "gyungha"
+let name = "gyungha";
 // undefined
-console.log(name)
+console.log(name);
 // VM217:1 gyungha 
 
-let welcome = ' Hello world!'
+let welcome = ' Hello world!';
 undefined
-welcome
+welcome;
 // ' Hello world!'
-let numbers = 55
+let numbers = 55;
 // undefined
-numbers
+numbers;
 // 55
 
 
-'String:' +welcome
+'String:' +welcome;
 // 'String: Hello world!'
-let concats = "String : " +welcome
+let concats = "String : " +welcome;
 // undefined
-concats
+concats;
 // 'String :  Hello world!'
 
-numbers
+numbers;
 // 55
-concats = concats + ", Number:" + numbers
+concats = concats + ", Number:" + numbers;
 // 'String :  Hello world!, Number:55'
 concats
 // 'String :  Hello world!, Number:55
 
-alert(concats)
+alert(concats);
 // undefined
 
 
 // `` => 문자로 인식하게 해주는 포맷(이름은 titlt)
 
-concats
+concats;
 // 'String :  Hello world!, Number:55'
-`String : ${welcome}, Number: ${numbers}` // 그냥 쓰면 문자열로 인식, ${}로 감싸주면 변수로 인식(무조건 titlt를 써야지 이 문법을 사용할 수 있음)
+`String : ${welcome}, Number: ${numbers}`; // 그냥 쓰면 문자열로 인식, ${}로 감싸주면 변수로 인식(무조건 titlt를 써야지 이 문법을 사용할 수 있음)
 // 'String :  Hello world!, Number: 55'
 
-concats
+concats;
 // 'String :  Hello world!, Number:55'
-`String : ${welcome}. Number: ${numbers}`
+`String : ${welcome}. Number: ${numbers}`;
 // 'String :  Hello world!. Number: 55'
-let concats_tilt = `String : ${welcome}, Number: ${numbers}`
+let concats_tilt = `String : ${welcome}, Number: ${numbers}`;
 // undefined
-concats_tilt
+concats_tilt;
 // 'String :  Hello world!, Number: 55'
-console.log(concats_tilt)  // => print를 의미
+console.log(concats_tilt);  // => print를 의미
 // VM1211:1 String :  Hello world!, Number: 55
