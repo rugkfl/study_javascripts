@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div id="first_id">
+    <h3>First ID</h3>
+   </div>
+</body>
+<script>
+  let message = `Second ID with javascript!`
+  message
+  //'Second ID with javascript!' 
+  let first_id = document.querySelector("#first_id")
+  first_id.innerHTML = `<h1>Temp ID</h1>`
+//   '<h1>Temp ID</h1>' 
+  first_id.innerHTML = message
+//   'Second ID with javascript!'
+  first_id.innerHTML = `<h1>${message}</h1>`
+//   '<h1>Second ID with javascript!</h1>'
+</script>
+
+
+</html>
