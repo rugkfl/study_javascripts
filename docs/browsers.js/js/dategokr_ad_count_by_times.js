@@ -35,7 +35,7 @@
 // 버튼 생성 시
 let date_list = document.querySelector("#date_id");
 let currentpage = 1; // 현재 페이지 번호
-let itemsPerPage = 10; // 한 페이지 당 보여줄 데이터 수
+// let itemsPerPage = 10; // 한 페이지 당 보여줄 데이터 수
 
 date_list.addEventListener('click', async (event) => {
     let url = `https://apis.data.go.kr/B552898/ad_count_by_times/getAdCountByTimesList?serviceKey=ZYK0bMGPmpujibjhabHiPWFvFzI%2FxcgntGutROQzYCLasxlwqqEtn4KO5lAeieJ8i35RbVnOnRer7tfV3A%2FwGA%3D%3D&pageNo=${currentpage}&numOfRows=50`;
@@ -46,11 +46,11 @@ date_list.addEventListener('click', async (event) => {
         let result = await response.json(); // 
 
         let ad_count_array = result['response']['body']['items'];
-        let start = (currentpage - 1) * itemsPerPage; // // 현재 페이지의 첫 번째 데이터의 인덱스
-        let end = start + itemsPerPage; // 현재 페이지의 마지막 데이터 인덱스
-        let page_date = ad_count_array.slice(start, end) //  // 현재 페이지에 표시할 데이터만 지정
+        // let start = (currentpage - 1) * itemsPerPage; // // 현재 페이지의 첫 번째 데이터의 인덱스
+        // let end = start + itemsPerPage; // 현재 페이지의 마지막 데이터 인덱스
+        // let page_date = ad_count_array.slice(start, end) //  // 현재 페이지에 표시할 데이터만 지정
         let ad_count_table = "";
-        for (let ad_count_object of page_date) {
+        for (let ad_count_object of ad_count_array) {
             ad_count_table = `${ad_count_table}<tr>
                 <td>${ad_count_object["BRDC_YMD"]}</td>
                 <td>${ad_count_object["BRDC_WKD"]}</td>
@@ -93,11 +93,11 @@ before_btn.addEventListener('click', async (event) => {
         let result = await response.json(); // 
 
         let ad_count_array = result['response']['body']['items'];
-        let start = (currentpage - 1) * itemsPerPage; // // 현재 페이지의 첫 번째 데이터의 인덱스
-        let end = start + itemsPerPage; // 현재 페이지의 마지막 데이터 인덱스
-        let page_date = ad_count_array.slice(start, end) //  // 현재 페이지에 표시할 데이터만 지정
+        // let start = (currentpage - 1) * itemsPerPage; // // 현재 페이지의 첫 번째 데이터의 인덱스
+        // let end = start + itemsPerPage; // 현재 페이지의 마지막 데이터 인덱스
+        // let page_date = ad_count_array.slice(start, end) //  // 현재 페이지에 표시할 데이터만 지정
         let ad_count_table = "";
-        for (let ad_count_object of page_date) {
+        for (let ad_count_object of ad_count_array) {
             ad_count_table = `${ad_count_table}<tr>
                 <td>${ad_count_object["BRDC_YMD"]}</td>
                 <td>${ad_count_object["BRDC_WKD"]}</td>
@@ -131,15 +131,15 @@ next_btn.addEventListener('click', async (event) => {
         let result = await response.json(); // 
 
         let ad_count_array = result['response']['body']['items'];
-        let start = (currentpage - 1) * itemsPerPage; // // 현재 페이지의 첫 번째 데이터의 인덱스
-        let end = start + itemsPerPage; // 현재 페이지의 마지막 데이터 인덱스
-        let page_date = ad_count_array.slice(start, end) //  // 현재 페이지에 표시할 데이터만 지정
+        // let start = (currentpage - 1) * itemsPerPage; // // 현재 페이지의 첫 번째 데이터의 인덱스
+        // let end = start + itemsPerPage; // 현재 페이지의 마지막 데이터 인덱스
+        // let page_date = ad_count_array.slice(start, end) //  // 현재 페이지에 표시할 데이터만 지정
 
         // 다음 페이지에 내용이 있는지 확인
         // 데이터가 있다면 테이블을 생성해주기 위한 조건문
         if (ad_count_array.length > 0) {
             let ad_count_table = "";
-            for (let ad_count_object of page_date) {
+            for (let ad_count_object of ad_count_array) {
                 ad_count_table = `${ad_count_table}<tr>
                     <td>${ad_count_object["BRDC_YMD"]}</td>
                     <td>${ad_count_object["BRDC_WKD"]}</td>
