@@ -38,7 +38,7 @@ let currentpage = 1; // 현재 페이지 번호
 // let itemsPerPage = 10; // 한 페이지 당 보여줄 데이터 수
 
 date_list.addEventListener('click', async (event) => {
-    let url = `https://apis.data.go.kr/B552898/ad_count_by_times/getAdCountByTimesList?serviceKey=ZYK0bMGPmpujibjhabHiPWFvFzI%2FxcgntGutROQzYCLasxlwqqEtn4KO5lAeieJ8i35RbVnOnRer7tfV3A%2FwGA%3D%3D&pageNo=${currentpage}&numOfRows=50`;
+    let url = `https://apis.data.go.kr/B552898/ad_count_by_times/getAdCountByTimesList?serviceKey=ZYK0bMGPmpujibjhabHiPWFvFzI%2FxcgntGutROQzYCLasxlwqqEtn4KO5lAeieJ8i35RbVnOnRer7tfV3A%2FwGA%3D%3D&pageNo=${currentpage}&numOfRows=10`;
     let options = {}; // =\ python dict
     try {
         let response = await fetch(url, options); // send
@@ -85,7 +85,7 @@ before_btn.addEventListener('click', async (event) => {
         currentpage -= 1;
     }
     console.log(`currentpage : ${currentpage}`)  // 디버깅을 위한 코드
-    let url = `https://apis.data.go.kr/B552898/ad_count_by_times/getAdCountByTimesList?serviceKey=ZYK0bMGPmpujibjhabHiPWFvFzI%2FxcgntGutROQzYCLasxlwqqEtn4KO5lAeieJ8i35RbVnOnRer7tfV3A%2FwGA%3D%3D&pageNo=${currentpage}&numOfRows=50`;
+    let url = `https://apis.data.go.kr/B552898/ad_count_by_times/getAdCountByTimesList?serviceKey=ZYK0bMGPmpujibjhabHiPWFvFzI%2FxcgntGutROQzYCLasxlwqqEtn4KO5lAeieJ8i35RbVnOnRer7tfV3A%2FwGA%3D%3D&pageNo=${currentpage}&numOfRows=10`;
     let options = {}; // =\ python dict
     try {
         let response = await fetch(url, options); // send
@@ -123,7 +123,7 @@ let next_btn = document.querySelector("#next_button");
 next_btn.addEventListener('click', async (event) => {
     currentpage += 1 // 다음 버튼을 누르면  다음 페이지를 보여줌
     console.log(`currentpage : ${currentpage}`) // 디버깅을 위한 코드
-    let url = `https://apis.data.go.kr/B552898/ad_count_by_times/getAdCountByTimesList?serviceKey=ZYK0bMGPmpujibjhabHiPWFvFzI%2FxcgntGutROQzYCLasxlwqqEtn4KO5lAeieJ8i35RbVnOnRer7tfV3A%2FwGA%3D%3D&pageNo=${currentpage}&numOfRows=50`;
+    let url = `https://apis.data.go.kr/B552898/ad_count_by_times/getAdCountByTimesList?serviceKey=ZYK0bMGPmpujibjhabHiPWFvFzI%2FxcgntGutROQzYCLasxlwqqEtn4KO5lAeieJ8i35RbVnOnRer7tfV3A%2FwGA%3D%3D&pageNo=${currentpage}&numOfRows=10`;
     let options = {}; // =\ python dict
     try {
         let response = await fetch(url, options); // send
