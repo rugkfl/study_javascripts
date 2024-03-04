@@ -19,6 +19,7 @@
 <!-- Bootstrap Bundle with Popper.js and Bootstrap JS -->
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js'></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 <script>
     // Load the Visualization API and the corechart package.
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -41,7 +42,7 @@
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([   // 이 부분이 차트의 데이터
-            ['Mushrooms', 3],   
+            ['Mushrooms', 3],
             ['Onions', 1],
             ['Olives', 1],
             ['Zucchini', 1],
@@ -49,7 +50,7 @@
         ]);
 
         // Set chart options
-        var options = {'title': 'How Much Pizza I Ate Last Night' };
+        var options = { 'title': 'How Much Pizza I Ate Last Night' };
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.querySelector('#pieChart'));
@@ -57,25 +58,25 @@
 
         // Data for Line Chart
         let lineData = new google.visualization.DataTable();
-            lineData.addColumn('number', 'X');
-            lineData.addColumn('number', 'Line1');
-            lineData.addColumn('number', 'Line2');
+        lineData.addColumn('number', 'X');
+        lineData.addColumn('number', 'Line1');
+        lineData.addColumn('number', 'Line2');
 
-            lineData.addRows([
-                [1, 5, 7],
-                [2, 9, 3],
-                [3, 2, 6]
-            ]);
+        lineData.addRows([
+            [1, 5, 7],
+            [2, 9, 3],
+            [3, 2, 6]
+        ]);
 
-            let lineOptions = {
-                title: 'Line Chart',
-                curveType: 'function',
-                legend: { position: 'bottom' }
-            };
+        let lineOptions = {
+            title: 'Line Chart',
+            curveType: 'function',
+            legend: { position: 'bottom' }
+        };
 
-            
-            let lineChart = new google.visualization.LineChart(document.querySelector('#lineChart'));
-            lineChart.draw(lineData, lineOptions);
+
+        let lineChart = new google.visualization.LineChart(document.querySelector('#lineChart'));
+        lineChart.draw(lineData, lineOptions);
 
 
         // html 위치 지정
